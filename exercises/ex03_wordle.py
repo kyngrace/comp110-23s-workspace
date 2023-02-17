@@ -52,8 +52,8 @@ def main() -> None:
 
     while turns < 6 and not(you_won):
         print(f"=== Turn {turns +1}/6 ===")
-        guess = input_guess(secret)
-        #3
+        guess = input_guess(len(secret))
+        print(emojified(guess, secret))
         if guess == secret:
             you_won: bool = True
         turns += 1
