@@ -8,11 +8,11 @@ def all(int_list: list[str], matching_int: int) -> bool:
     while int_list_idx < len(int_list):
         matching_int = int_list[0]
         int_list_idx += 1  
-    if matching_int == int_list:
-        return True
-    else: 
-        return False
-    if len(int_list) == 0:
-        return False
+        if matching_int == int_list:
+            return True
+        else: 
+            return False
+        if len(int_list) == 0:
+            return False
     
     
