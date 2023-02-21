@@ -10,9 +10,10 @@ def all(int_list: list[str], matching_int: int) -> bool:
         int_list_idx += 1  
         if matching_int == int_list:
             return True
-        else: 
-            return False
         if len(int_list) == 0:
             return False
+        else: 
+            return False
+        
     
     
