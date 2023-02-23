@@ -27,7 +27,7 @@ def max(input: list[int]) -> int:
     # declares the function and names the parameter
     """Returns the maximum integer from a given list or returns a ValueError for an empty list."""
     if len(input) == 0:
-    # check if the input list is empty
+        # check if the input list is empty
         raise ValueError("max() arg is an empty List")
         # raise a ValueError with a specific error message
     max_int: int = input[0]
@@ -35,33 +35,33 @@ def max(input: list[int]) -> int:
     counter: int = 0
     # create a counter variable and initialize it to 0
     while counter < len(input):
-    # check if counter is less than the length of the input list
+        # check if counter is less than the length of the input list
         if input[counter] > max_int:
-        # check if the current integer being checked is larger
+            # check if the current integer being checked is larger
             max_int = input[counter]
             # update the maximum integer
         counter += 1
         # counter variable moves on to the next integer in the list
     return max_int
-   # return the value of the final maximum integer
+    # return the value of the final maximum integer
 
 
 def is_equal(int_list1: list[int], int_list2: list[int]) -> bool:
     # declares the function and names the parameters
     """Returns a bool that indicates if every element at every index is equal in both lists."""   
     if len(int_list1) != len(int_list2):
-    # check if the lengths of int_list1 and int_list2 are equal
+        # check if the lengths of int_list1 and int_list2 are equal
         return False
         # return False if the lengths of the two lists are not equal
     idx: int = 0
     # initialize an indexing variable
     while idx < len(int_list1):
-    # compare the integers in both of the lists at a certain index
+        # compare the integers in both of the lists at a certain index
         if int_list1[idx] != int_list2[idx]:
-        # check if the integers at the index are equal
+            # check if the integers at the index are equal
             return False
             # if the integers are not equal, return False
         idx += 1
         # add 1 to the indexing variable so the while loop while continue through the list
     return True
-   # if the while loop gets to this point then that means the lists have not returned False and they are equal so, return True
+    # if the while loop gets to this point then that means the lists have not returned False and they are equal so, return True
