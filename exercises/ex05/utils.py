@@ -9,8 +9,16 @@ def only_evens(given_list: list[int]) -> list[int]:
     for int in given_list:
         # creates a for...in loop to iterate through each integer in the given list
         if int % 2 == 0:
-            # check if the integer is even
+            # checks if the integer is even
             even_list.append(int)
             # if the integer is even then add it to the outputed even list
     return even_list
-    # return the new created list that contains only even integers
+    # returns the new created list that contains only even integers
+
+def concat(first_list: list[int], second_list: list[int]) -> list[int]:
+    # declares the function and names the parameters
+    """Returns a list that combines both input lists without modifying them."""
+    combined_list: int = first_list.append(second_list)
+    # assigns the combined_list variable that is equal to the first_list and second_list combined
+    return combined_list
+    # returns the new created list that contains both the first_list and second_list

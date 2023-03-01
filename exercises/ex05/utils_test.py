@@ -17,3 +17,23 @@ def test_only_evens_with_odd_list() -> None:
     # one use case test
     given_list: list[int] = [3, 5, 7, 11, 15]
     assert only_evens(given_list) == []
+
+from exercises.ex05.utils import concat
+
+def test_concat_empty_lists() -> None:
+    # one edge case test
+    first_list: list[int] = []
+    second_list: list[int] = []
+    assert concat(first_list, second_list) == []
+
+def test_concat_full_lists() -> None:
+    # one use case test
+    first_list: list[int] = [2, 3, 6]
+    second_list: list[int] = [7, 8, 11]
+    assert concat(first_list, second_list) == [2, 3, 6, 7, 8, 11]
+
+def test_concat_full_list_and_empty_list() -> None:
+    # one use case test
+    first_list: list[int] = [2, 3, 6]
+    second_list: list[int] = []
+    assert concat(first_list, second_list) == [2, 3, 6]
