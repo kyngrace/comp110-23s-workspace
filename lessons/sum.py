@@ -1,6 +1,6 @@
 """Example function for unit tests"""
 
-def sum(xs: list[float]) -> float:
+def oldsum(xs: list[float]) -> float:
     """return sum of all elements in xs"""
     # while loop
     sum_total: float = 0.0
@@ -10,12 +10,16 @@ def sum(xs: list[float]) -> float:
         idx += 1
     return sum_total
 
+def forsum(xs: list[float]) -> float:
+    """return sum of all elements in xs"""
     # for...in loop
     sum_total: float = 0.0
     for elem in xs:
         sum_total += elem
     return sum_total
 
+def rangesum(xs: list[float]) -> float:
+    """return sum of all elements in xs"""
     # for...in...range loop
     sum_total: float = 0.0
     for idx in range(len(xs)):
