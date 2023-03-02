@@ -50,8 +50,8 @@ def sub(int_list: list[int], start_idx: int, end_idx: int) -> list[int]:
     # assigns the subset variable to an empty list that will hold the subsets from the inputted list
     idx: int = start_idx
     # assigns the idx variable to the start_idx so the while loop will start at the beginning of the list 
-    while idx < end_idx:
-        # checks if the idx is less than the end_idx (makes it so that the while loop can go through each part of the list until the end)
+    for idx in range(start_idx, end_idx, 1):
+        # loops through a range of integers that begins at the start_idx and ends at the end_idx
         subset.append(int_list[idx])
         # appends the current int from the int_list to the subset list 
         idx += 1
