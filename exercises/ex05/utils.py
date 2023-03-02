@@ -1,24 +1,26 @@
 """EX05 - Working with lists and unit tests."""
 __author__ = "730553137"
 
+
 def only_evens(given_list: list[int]) -> list[int]:
     # declares the function and names the parameter
     """Returns a list from the input list with only the even numbers."""
     even_list: list[int] = []
     # assigns the even_list variable and creates an empty list to keep even integers
-    for int in given_list:
+    for num in given_list:
         # creates a for...in loop to iterate through each integer in the given list
-        if int % 2 == 0:
+        if num % 2 == 0:
             # checks if the integer is even
-            even_list.append(int)
+            even_list.append(num)
             # if the integer is even then add it to the outputed even list
     return even_list
     # returns the new created list that contains only even integers
 
+
 def concat(first_list: list[int], second_list: list[int]) -> list[int]:
     # declares the function and names the parameters
     """Returns a list that combines both input lists without modifying them."""
-    combined_list: int = []
+    combined_list: list[int] = []
     # assigns the combined_list variable to an empty list that will hold the appended ints from the lists
     for ints in first_list:
         # creates a for...in loop that considers the ints in the first list
@@ -30,6 +32,7 @@ def concat(first_list: list[int], second_list: list[int]) -> list[int]:
         # appends the ints from the second list to the combined list 
     return combined_list
     # returns the new created list that contains both the first_list and second_list
+
 
 def sub(int_list: list[int], start_idx: int, end_idx: int) -> list[int]:
     # declares the function and the names of the parameters
