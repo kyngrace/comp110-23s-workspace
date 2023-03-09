@@ -25,9 +25,9 @@ def main() -> None:
         if new_choice == "first_option":
             points = first_option(points, player)
         elif new_choice == "second_option":
-            points = second_option(points)
+            points = second_option(points, player)
         elif new_choice == "third_option":
-            points = third_option(points)
+            points = third_option(points, player)
         return points
 
 
@@ -46,7 +46,7 @@ def first_option(points: int, player: str) -> int:
     return points
 
 
-def second_option(points: int) -> int:
+def second_option(points: int, player: str) -> int:
     """Defines the second_option which gives the player a chance to earn or lose points based on taking care of the plant."""
     print(f"You picked the second option. You get to {WATER_EMOJI} water your plant. Your plant is happy!")
     points += 5
@@ -61,7 +61,7 @@ def second_option(points: int) -> int:
         return points
 
 
-def third_option(points: int):
+def third_option(points: int, player: str) -> int:
     """Defines the third_option which gives the player a chance to earn or lose points based on taking care of the plant."""
     print(f"You picked the third option. You set one of your plants leaves on {FIRE_EMOJI} fire. Your plant is not happy!")
     points -= 5
