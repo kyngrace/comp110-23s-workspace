@@ -59,6 +59,9 @@ def second_option(points: int, player: str) -> int:
         elif too_much_water == "no":
             print(f"You did not put the {PLANT_EMOJI} plant in the sun and it wilted from all the water.")
             points -= 5
+        else:
+            if too_much_water != "yes" or "no":
+                print("Invalid answer, try again.")
         return points
 
 
@@ -74,6 +77,10 @@ def third_option(points: int, player: str) -> int:
         elif add_water == "no":
             print(f"You did not add water {FIRE_EMOJI}. The plant is dead.")
             points -= 5
+        else:
+            if add_water != "yes" or "no":
+                print("Invalid answer, try again.")
+        return points
 
 
 if __name__ == "__main__":
