@@ -8,7 +8,7 @@ FIRE_EMOJI: str = "\U0001F525"
 PLANT_EMOJI: str = "\U0001F331"
 
 points: int = 0
-player: str = input("What's your name? ")
+player: str = ""
 
 
 def main() -> None:
@@ -34,6 +34,7 @@ def main() -> None:
 def greet(player: str) -> None:
     """Defines the greet function which welcomes the player to the game and asks for their name."""
     print(f"Welcome to my {PLANT_EMOJI} garden game!")
+    player: str = input("What's your name? ")
     print(f"Hello {player}! I hope you're ready to take care of your plant!")
 
  
