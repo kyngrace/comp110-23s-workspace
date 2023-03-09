@@ -14,9 +14,10 @@ player: str = ""
 def main() -> None:
     """Defines the main function which asks the player to choose an option and tells them how many points they have."""
     global points
-    global player 
+    #global player 
 
     greet(player) 
+    print(player)
 
     while True:
         print(f"You have {points} points!")
@@ -31,10 +32,12 @@ def main() -> None:
         return points
 
 
-def greet(player: str) -> None:
+def greet(player_name: str) -> None:
     """Defines the greet function which welcomes the player to the game and asks for their name."""
+    global player
     print(f"Welcome to my {PLANT_EMOJI} garden game!")
-    player: str = input("What's your name? ")
+    player_name: str = input("What's your name? ")
+    player = player_name
     print(f"Hello {player}! I hope you're ready to take care of your plant!")
 
  
