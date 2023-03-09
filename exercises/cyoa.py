@@ -1,6 +1,8 @@
 """EX06 - Taking care of my plant!"""
 __author__ = "730553137"
 
+import random
+
 WATER_EMOJI: str = "\U0001F4A7"
 FIRE_EMOJI: str = "\U0001F525"
 PLANT_EMOJI: str = "\U0001F331"
@@ -35,15 +37,14 @@ def greet(player: str) -> None:
     player: str = input("What's your name? ")
     print(f"Hello {player}! I hope you're ready to take care of your plant!")
 
-
-import random 
-
+ 
 def first_option(points: int, player: str) -> int:
     """Defines the first_option function which is the end game option that gives the player a chance to earn random bonus points."""
     random_points: int = random.randint(1, 5)
     points += random_points
     print(f"You picked the end game option. You accumulated {points} adventure points throughout the game, with the addition of {random_points} bonus points from luck. Goodbye {player}!")
     return points
+
 
 def second_option(points: int) -> int:
     """Defines the second_option which gives the player a chance to earn or lose points based on taking care of the plant."""
