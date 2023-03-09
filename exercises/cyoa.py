@@ -5,25 +5,26 @@ WATER_EMOJI: str = "\U0001F4A7"
 FIRE_EMOJI: str = "\U0001F525"
 PLANT_EMOJI: str = "\U0001F331"
 
+points: int = 0
+player: str = ""
+
 
 def main() -> None:
-    """Defines the main function which asks the player to choose an option and tells them how many points they have.""" 
+    """Defines the main function which asks the player to choose an option and tells them how many points they have."""
     global points
-    points: int = 0
-    global player
-    player: str = ""
+    global player 
 
-    greet() 
+    greet(player) 
 
     while True:
         print(f"You have {points} points!")
         new_choice: str = input(f"Would you like to continue with {points} points or pick the first_option, second_option, or third_option? ")
 
-        if new_choice == first_option:
-            points = first_option(points)
-        elif new_choice == second_option:
+        if new_choice == "first_option":
+            points = first_option(points, player)
+        elif new_choice == "second_option":
             points = second_option(points)
-        elif new_choice == third_option:
+        elif new_choice == "third_option":
             points = third_option(points)
         return points
 
@@ -37,12 +38,12 @@ def greet(player: str) -> None:
 
 import random 
 
-def first_option(points: int):
+def first_option(points: int, player: str) -> int:
     """Defines the first_option function which is the end game option that gives the player a chance to earn random bonus points."""
     random_points: int = random.randint(1, 5)
     points += random_points
     print(f"You picked the end game option. You accumulated {points} adventure points throughout the game, with the addition of {random_points} bonus points from luck. Goodbye {player}!")
-
+    return points
 
 def second_option(points: int) -> int:
     """Defines the second_option which gives the player a chance to earn or lose points based on taking care of the plant."""
