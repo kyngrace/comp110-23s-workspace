@@ -17,7 +17,6 @@ def main() -> None:
     global player
 
     greet() 
-    print(player)
 
     while True:
         print(f"You have {points} points!")
