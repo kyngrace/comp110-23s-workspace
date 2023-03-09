@@ -38,7 +38,7 @@ def greet(player: str) -> None:
     print(f"Hello {player}! I hope you're ready to take care of your plant!")
 
  
-def first_option(points: int, player: str) -> int:
+def first_option(points: int, player: str):
     """Defines the first_option function which is the end game option that gives the player a chance to earn random bonus points."""
     random_points: int = random.randint(1, 5)
     points += random_points
