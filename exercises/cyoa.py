@@ -11,7 +11,7 @@ points: int = 0
 player: str = ""
 
 
-def main() -> None:
+def main() -> int:
     """Defines the main function which asks the player to choose an option and tells them how many points they have."""
     global points
     global player
