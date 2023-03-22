@@ -58,4 +58,23 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
                 most_frequent = color
                 # makes the most frequent equal to the color that appeared first in the dictionary 
     return most_frequent
-        # returns the most frequent color 
+        # returns the most frequent color
+
+
+def count(value_list: list[str]) -> dict[str, int]:
+    # declares the function and names the parameter
+    """Returns a dictionary that contains the counts of each item in the given list."""
+    result: dict[str, int] = {}
+    # intializes the result variable and creates an empty dictionary to hold the result
+    for value in value_list:
+        # creates a for loop that will loop through each value in the given value list
+        if value in result:
+            # checks if the current value being looped through is already a key in the result dictionary 
+            result[value] += 1
+            # if it is then add one to the value associated with the key
+        else:
+            # checks if the current value being looped through is not already a key in the result dictionary 
+            result[value] = 1
+            # if it is not then add a new key-value pair to the result dictionary that will have a value of 1
+    return result
+        # returns the resulting dictionary 
