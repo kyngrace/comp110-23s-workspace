@@ -25,9 +25,11 @@ def invert(given_dict: dict[str, str]) -> dict[str, list[str]]:
 def favorite_color(names_and_colors: dict[str, str]) -> str:
     # declares the function and names the parameter 
     """Returns the color that is most frequent throughout the dictionary and if there is a tie for frequency returns the one that appeared first."""
-    if not names_and_colors: 
-        return ""
-    color_tracker: dict[str, str] = {}
+    if not names_and_colors:
+        # checks if the given dictionary is empty
+        return {}
+            # returns an empty dictionary 
+    color_tracker: dict[str, int] = {}
     # creates an empty dictionary to keep track of the frequency of each color
     for color in names_and_colors.values():
         # creates a for loop that will loop over each value of the given dictionary
@@ -39,11 +41,11 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
             # checks if the color has not already been counted in the tracker
             color_tracker[color] = 1
             # adds 1 to the tracker for the color that has not already appeared in the dictionary 
-    most_frequent: list[str] = []
+    most_frequent: str = ""
     # intializes an empty list that will keep track of the most frequent color
     max_amount: int = 0
     # creates a variable to track the max count for the colors 
-    for color, amount in names_and_colors.values():
+    for color, amount in color_tracker.items():
         # creates a for loop that checks the amount of times a certain color appears in the given dictionary 
         if amount > max_amount:
             # checks if the amount of times the color appears is greater than the max amount another color appears 
@@ -51,7 +53,9 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
             # updates the most frequently occuring color if it appears more than the max amount
             max_amount = amount
             # updates the max amount so that the loop will know what amount to compare to other colors as it repeats
-        elif amount == max_amount:
-            most_frequent.append(color)
+        elif amount == max_amount and color < most_frequent:
+                # checks if there is the same amount of frequency (the max amount) between more than one color 
+                most_frequent = color
+                # makes the most frequent equal to the color that appeared first in the dictionary 
     return most_frequent
         # returns the most frequent color 
