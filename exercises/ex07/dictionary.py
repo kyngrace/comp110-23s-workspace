@@ -58,7 +58,7 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
         elif amount == max_amount and color < most_frequent:
             # checks if there is the same amount of frequency (the max amount) between more than one color 
             most_frequent = color
-                # makes the most frequent equal to the color that appeared first in the dictionary 
+            # makes the most frequent equal to the color that appeared first in the dictionary 
     return most_frequent
     # returns the most frequent color
 
