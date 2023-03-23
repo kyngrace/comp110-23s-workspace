@@ -29,7 +29,7 @@ def test_favorite_color_empty_dict() -> None:
     """This function tests if the favorite_color function will return an empty dictionary if the given dictionary is empty."""
     # one edge case test
     given_dict: dict[str, str] = {}
-    assert favorite_color(given_dict) == {}
+    assert favorite_color(given_dict) == None
 
 
 def test_favorite_color_one_most_frequent() -> None:

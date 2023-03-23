@@ -27,8 +27,8 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
     """Returns the color that is most frequent throughout the dictionary and if there is a tie for frequency returns the one that appeared first."""
     if not names_and_colors:
         # checks if the given dictionary is empty
-        return {}
-        # returns an empty dictionary 
+        return None
+        # returns None 
     color_tracker: dict[str, int] = {}
     # creates an empty dictionary to keep track of the frequency of each color
     for name in names_and_colors:
@@ -47,8 +47,10 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
     # intializes an empty list that will keep track of the most frequent color
     max_amount: int = 0
     # creates a variable to track the max count for the colors 
-    for amount in color_tracker[color]:
-        # creates a for loop that checks the amount of times a certain color appears in the given dictionary 
+    for color in color_tracker:
+        # creates a for loop that checks the amount of times a certain color appears in the given dictionary
+        amount = color_tracker[color] 
+        # initializes the amount variable to the frequency of the current color being looped through 
         if amount > max_amount:
             # checks if the amount of times the color appears is greater than the max amount another color appears 
             most_frequent = color
