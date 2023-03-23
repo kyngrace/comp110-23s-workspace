@@ -14,12 +14,12 @@ def invert(given_dict: dict[str, str]) -> dict[str, str]:
         if value in inverted_dict:
             # checks if the value already exists as a key once inverted 
             raise KeyError(f"Error! {value} already exists in the inverted dictionary as a key.")
+        # raises a KeyError
         else:
             # if it gets to this point in the loop then the key/value pair is added to the inverted dictionary
             inverted_dict[value] = key
-                # raises a KeyError
     return inverted_dict
-        # returns the inverted dictionary
+    # returns the inverted dictionary
 
 
 def favorite_color(names_and_colors: dict[str, str]) -> str:
@@ -28,7 +28,7 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
     if not names_and_colors:
         # checks if the given dictionary is empty
         return {}
-            # returns an empty dictionary 
+        # returns an empty dictionary 
     color_tracker: dict[str, int] = {}
     # creates an empty dictionary to keep track of the frequency of each color
     for name in names_and_colors:
@@ -56,11 +56,11 @@ def favorite_color(names_and_colors: dict[str, str]) -> str:
             max_amount = amount
             # updates the max amount so that the loop will know what amount to compare to other colors as it repeats
         elif amount == max_amount and color < most_frequent:
-                # checks if there is the same amount of frequency (the max amount) between more than one color 
-                most_frequent = color
+            # checks if there is the same amount of frequency (the max amount) between more than one color 
+            most_frequent = color
                 # makes the most frequent equal to the color that appeared first in the dictionary 
     return most_frequent
-        # returns the most frequent color
+    # returns the most frequent color
 
 
 def count(value_list: list[str]) -> dict[str, int]:
@@ -79,4 +79,4 @@ def count(value_list: list[str]) -> dict[str, int]:
             result[value] = 1
             # if it is not then add a new key-value pair to the result dictionary that will have a value of 1
     return result
-        # returns the resulting dictionary 
+    # returns the resulting dictionary 
