@@ -48,7 +48,7 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
         # Creates empty list to hold the first N values in each column
         for idx in range(N):
             # Loops through first N items of the tables column
-            if idx <= len(column_table[column]):
+            if idx < len(column_table[column]):
                 # Checks if the column has more than idx values, append the value to the first_N list 
                 first_N.append(column_table[column][idx])
                 # Removes and appends the first elem of the current column's list to the first_N list
