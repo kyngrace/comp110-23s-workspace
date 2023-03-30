@@ -47,7 +47,7 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
             if idx < len(column_table[column]):
                 # Checks if the column has more than idx values, append the value to the first_N list 
                 first_N.append(column_table[column][idx])
-                # Removes and append the first elem of the current column's list to the first_N list
+                # Removes and appends the first elem of the current column's list to the first_N list
                 new_table[column] = first_N
                 # Adds the resulting list to the dictionary that will be output 
     return new_table
