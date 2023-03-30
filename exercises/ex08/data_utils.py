@@ -37,22 +37,22 @@ def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
     return result
 
 
-def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+def head(column_table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     # Declares the head function and its parameters 
     """Returns a new column-based table that has only the first N rows of data for each column."""
     new_table: dict[str, list[str]] = {}
     # Creates a variable that is initialized to an empty dictionary 
     for column in column_table:
         # Loops through each of the columns in the first row
-        first_N: list[str] = []
+        first_n: list[str] = []
         # Creates empty list to hold the first N values in each column
-        for idx in range(N):
+        for idx in range(n):
             # Loops through first N items of the tables column
             if idx < len(column_table[column]):
                 # Checks if the column has more than idx values, append the value to the first_N list 
-                first_N.append(column_table[column][idx])
+                first_n.append(column_table[column][idx])
                 # Removes and appends the first elem of the current column's list to the first_N list
-                new_table[column] = first_N
+                new_table[column] = first_n
                 # Adds the resulting list to the dictionary that will be output 
     return new_table
 # Returns the dictionary/new table
