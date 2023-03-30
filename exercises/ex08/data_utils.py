@@ -1,3 +1,7 @@
+"""EX08 - Working with Jupyter Notebooks and data."""
+__author__ = "730553137"
+
+
 from csv import DictReader
 
 
