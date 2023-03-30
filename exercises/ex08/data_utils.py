@@ -40,6 +40,10 @@ def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(column_table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     # Declares the head function and its parameters 
     """Returns a new column-based table that has only the first N rows of data for each column."""
+    if n == 0:
+        # Checks if number of rows is zero
+        return {column: [] for column in column_table}
+    # If number of rows is zero, then it returns a new dictionary that has the same column names as the given table as keys and empty lists as values to go with each key
     new_table: dict[str, list[str]] = {}
     # Creates a variable that is initialized to an empty dictionary 
     for column in column_table:
