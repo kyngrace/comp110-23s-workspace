@@ -30,7 +30,7 @@ def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
     """Reformats data so that it's a dictionary with column headers as keys."""
     result: dict[str, list[str]] = {}
     # loop through keys of one row of table
-    first_row: dict[str, list[str]] = table[0]
+    first_row: dict[str, str] = table[0]
     for key in first_row:
         # for each key, make a dictionary entry with all column values
         result[key] = column_values(table, key)
@@ -43,7 +43,7 @@ def head(column_table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     if n == 0:
         # Checks if number of rows is zero
         return {column: [] for column in column_table}
-    # If number of rows is zero, then it returns a new dictionary that has the same column names as the given table as keys and empty lists as values to go with each key
+    # If number of rows is zero, then it returns a new dictionary that has the same column names as the given table and with keys and empty lists as values to go with each key
     new_table: dict[str, list[str]] = {}
     # Creates a variable that is initialized to an empty dictionary 
     for column in column_table:
