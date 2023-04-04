@@ -11,4 +11,5 @@ class Fish:
     
     def one_day(self):
         self.age += 1
+        # Increase age by 1
         return None

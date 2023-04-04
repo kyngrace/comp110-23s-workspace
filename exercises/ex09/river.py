@@ -73,4 +73,5 @@ class River:
         while idx < 7:
             self.one_river_day()
             idx += 1
+            # Incease day of the week by 1
         return None
