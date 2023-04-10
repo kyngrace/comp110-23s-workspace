@@ -23,6 +23,20 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+        """Check for the ages of bears and fish in the river and get rid of the ones that are too old."""
+        # Check for fish that are too old and remove them if they are a certain age
+        young_fish: list[Fish] = []
+        for fish in self.fish:
+            if fish.age <= 3:
+                young_fish.append(fish)
+        self.fish = young_fish
+
+        # Check for the bears that are too old and remoce them if they are a certain age
+        young_bears: list[Bear] = []
+        for bear in self.bears:
+            if bear.age <= 5:
+                young_bears.append(bear)   
+        self.bears = young_bears    
         return None
 
     def bears_eating(self):
