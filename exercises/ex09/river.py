@@ -22,6 +22,13 @@ class River:
         for x in range(0, num_bears):
             self.bears.append(Bear())
 
+    def remove_fish(self, amount: int) -> None:
+        """Remove a certain (the frontmost) fish from the the river."""
+        idx: int = 0
+        while idx < amount and self.fish:
+            self.fish.pop(0)
+            idx += 1
+
     def check_ages(self):
         """Check for the ages of bears and fish in the river and get rid of the ones that are too old."""
         # Check for fish that are too old and remove them if they are a certain age
@@ -39,16 +46,46 @@ class River:
         self.bears = young_bears    
         return None
 
-    def bears_eating(self):
+    def bears_eating(self, bears: list[Bear]):
+        """Puts controls on how many fish a bear will eat when there is a certain amount in the river."""
+        for bear in bears:
+            if self.river.num_fish >= 5:
+                self.river.remove_fish(3)
+                bear.eat(3)
+                # The bear eats 3 fish
         return None
     
     def check_hunger(self):
+        """Checks the hunger scores of the bears in the river and if a score is less than zero then it removes the bear from the river."""
+        living_bears: list[Bear] = []
+        for bear in self.bears:
+            bear.one_day()
+            if bear.hunger_score >= 0:
+                living_bears.append(bear)
+        self.bears = living_bears
+        # Updates the original bear list to be equal to the living bears list
         return None
         
     def repopulate_fish(self):
+        """Produces 4 baby fish per every fish pair."""
+        # Produces a fish offspring from a 2 fish pair
+        num_fish = self.num_fish
+        baby_fish: list[Fish] = (num_fish // 2) * 4
+        self.num_fish += baby_fish
         return None
     
     def repopulate_bears(self):
+        """Produces 1 bear cub per every bear pair."""
+        # Produces a bear offspring from a 2 bear pair
+        num_bears: int = len(self.bears)
+        baby_bears: list[Bear] = []
+        for idx in range(num_bears // 2):
+            bear_one = self.bears[idx*2]
+            bear_two = self.bears[idx*2 + 1]
+            bear_offspring = Bear()
+            baby_bears.append(bear_offspring)
+        for bear in baby_bears:
+            self.bears.append(bear)
         return None
     
     def view_river(self):
