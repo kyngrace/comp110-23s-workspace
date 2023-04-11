@@ -9,9 +9,9 @@ class River:
     """Declares the class River."""
 
     # attributes
-    day: int #  tells what day of the river's lifecycle is being modeled
-    bears: list[Bear] #  stores the river's bear population
-    fish: list[Fish] #  stores the river's fish population
+    day: int  # tells what day of the river's lifecycle is being modeled
+    bears: list[Bear]  # stores the river's bear population
+    fish: list[Fish]  # stores the river's fish population
     
     def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears."""
