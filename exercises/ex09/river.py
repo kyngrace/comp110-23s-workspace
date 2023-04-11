@@ -53,6 +53,7 @@ class River:
         for bear in self.bears:
             if len(self.fish) >= 5:
                 bear.eat(3)
+                self.remove_fish(3)
             else:
                 bear.eat(0)
         return None
@@ -72,7 +73,7 @@ class River:
         # Produces a fish offspring from a 2 fish pair
         num_fish: int = len(self.fish)
         baby_fish: list[Fish] = []
-        for idx in range(num_fish // 2) * 4:
+        for idx in range(num_fish // 2 * 4):
             fish_one = self.fish[idx * 2]
             fish_two = self.fish[idx * 2 + 1]
             fish_offspring = Fish()
