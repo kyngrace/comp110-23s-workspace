@@ -52,9 +52,9 @@ class River:
         """Puts controls on how many fish a bear will eat when there is a certain amount in the river."""
         for bear in bears:
             if self.num_fish >= 5:
-                self.remove_fish(3)
-                bear.eat()
-                # The bear eats 3 fish
+                bear.eat(3)
+            else:
+                bear.eat(0)
         return None
     
     def check_hunger(self):
