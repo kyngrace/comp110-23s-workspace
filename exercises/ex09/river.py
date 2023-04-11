@@ -48,9 +48,9 @@ class River:
         self.bears = young_bears    
         return None
 
-    def bears_eating(self, bears: list[Bear]):
+    def bears_eating(self):
         """Puts controls on how many fish a bear will eat when there is a certain amount in the river."""
-        for bear in bears:
+        for bear in self.bears:
             if self.num_fish >= 5:
                 bear.eat(3)
             else:
@@ -71,9 +71,15 @@ class River:
     def repopulate_fish(self):
         """Produces 4 baby fish per every fish pair."""
         # Produces a fish offspring from a 2 fish pair
-        num_fish = self.num_fish
-        baby_fish: list[Fish] = (num_fish // 2) * 4
-        self.num_fish += baby_fish
+        num_fish: int = len(self.fish)
+        baby_fish: list[Fish] = []
+        for idx in range(num_fish // 2) * 4:
+            fish_one = self.fish[idx * 2]
+            fish_two = self.fish[idx * 2 + 1]
+            fish_offspring = Fish()
+            baby_fish.append(fish_offspring)
+        for fish in baby_fish:
+            self.fish.append(fish)    
         return None
     
     def repopulate_bears(self):
