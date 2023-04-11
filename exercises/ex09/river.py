@@ -4,15 +4,17 @@ __author__ = "730553137"
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
+
 class River:
+    """Declares the class River."""
 
     # attributes
-    day: int # tells what day of the river's lifecycle is being modeled
-    bears: list[Bear] # stores the river's bear population
-    fish: list[Fish] # stores the river's fish population
+    day: int #  tells what day of the river's lifecycle is being modeled
+    bears: list[Bear] #  stores the river's bear population
+    fish: list[Fish] #  stores the river's fish population
     
     def __init__(self, num_fish: int, num_bears: int):
-        """New River with num_fish Fish and num_bears Bears"""
+        """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
@@ -70,7 +72,7 @@ class River:
         """Produces 4 baby fish per every fish pair."""
         # Produces a fish offspring from a 2 fish pair
         num_fish = self.num_fish
-        baby_fish: list[Fish] = (num_fish//2) * 4
+        baby_fish: list[Fish] = (num_fish // 2) * 4
         self.num_fish += baby_fish
         return None
     
@@ -79,9 +81,9 @@ class River:
         # Produces a bear offspring from a 2 bear pair
         num_bears: int = len(self.bears)
         baby_bears: list[Bear] = []
-        for idx in range(num_bears//2):
-            bear_one = self.bears[idx*2]
-            bear_two = self.bears[idx*2 + 1]
+        for idx in range(num_bears // 2):
+            bear_one = self.bears[idx * 2]
+            bear_two = self.bears[idx * 2 + 1]
             bear_offspring = Bear()
             baby_bears.append(bear_offspring)
         for bear in baby_bears:
@@ -96,7 +98,7 @@ class River:
         return None
             
     def one_river_day(self):
-        """Simulate one day of life in the river"""
+        """Simulate one day of life in the river."""
         # Increase day by 1
         self.day += 1
         # Simulate one day for all Bears
