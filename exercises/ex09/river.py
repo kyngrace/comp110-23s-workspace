@@ -108,7 +108,7 @@ class River:
         for fish in self.fish:
             fish.one_day()
         # Simulate Bear's eating
-        self.bears_eating()
+        self.bears_eating(bear)
         # Remove hungry Bear's from River
         self.check_hunger()
         # Remove old Fish and Bear's from River
