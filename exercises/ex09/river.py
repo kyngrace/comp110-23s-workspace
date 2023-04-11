@@ -51,7 +51,7 @@ class River:
     def bears_eating(self):
         """Puts controls on how many fish a bear will eat when there is a certain amount in the river."""
         for bear in self.bears:
-            if self.num_fish >= 5:
+            if len(self.fish) >= 5:
                 bear.eat(3)
             else:
                 bear.eat(0)
@@ -61,7 +61,6 @@ class River:
         """Checks the hunger scores of the bears in the river and if a score is less than zero then it removes the bear from the river."""
         living_bears: list[Bear] = []
         for bear in self.bears:
-            bear.one_day()
             if bear.hunger_score >= 0:
                 living_bears.append(bear)
         self.bears = living_bears
