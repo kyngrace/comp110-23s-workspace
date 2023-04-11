@@ -108,7 +108,7 @@ class River:
         for fish in self.fish:
             fish.one_day()
         # Simulate Bear's eating
-        self.bears_eating(bear)
+        self.bears_eating()
         # Remove hungry Bear's from River
         self.check_hunger()
         # Remove old Fish and Bear's from River
@@ -122,9 +122,9 @@ class River:
 
     def one_river_week(self):
         """Simulate one week of life in the river."""
-        idx: int = 0
-        while idx < 7:
+        day: int = 0
+        while day <= 7:
             self.one_river_day()
-            idx += 1
+            day += 1
             # Incease day of the week by 1
         return None
