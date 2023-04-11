@@ -74,8 +74,6 @@ class River:
         num_fish: int = len(self.fish)
         baby_fish: list[Fish] = []
         for idx in range(num_fish // 2 * 4):
-            fish_one = self.fish[idx * 2]
-            fish_two = self.fish[idx * 2 + 1]
             fish_offspring = Fish()
             baby_fish.append(fish_offspring)
         for fish in baby_fish:
@@ -88,8 +86,6 @@ class River:
         num_bears: int = len(self.bears)
         baby_bears: list[Bear] = []
         for idx in range(num_bears // 2):
-            bear_one = self.bears[idx * 2]
-            bear_two = self.bears[idx * 2 + 1]
             bear_offspring = Bear()
             baby_bears.append(bear_offspring)
         for bear in baby_bears:
@@ -128,7 +124,7 @@ class River:
 
     def one_river_week(self):
         """Simulate one week of life in the river."""
-        day: int = 0
+        day: int = 1
         while day <= 7:
             self.one_river_day()
             day += 1
