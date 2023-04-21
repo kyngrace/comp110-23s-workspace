@@ -88,7 +88,15 @@ class Simpy:
             assert len(self.values) == len(rhs.values)
             return Simpy([self.values[idx] > rhs.values[idx] for idx in range(len(self.values))])
         
-    def __getitem__(self, rhs: int) -> float:
-        """Adds the ability to use the subscription operator with Simpy objects."""
-        return self.values[rhs]
-    # returns the value at a certain index 
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Takes either an int in the first usage or a list[bool] in the second usage but returns either a single float value or a new Simpy object."""
+        if type(rhs) == int:
+            # checks if the type of the rhs argument is int
+            return self.values[rhs]
+        elif type(rhs) == list and len(rhs) == len(self.values):
+            # checks if the type of the rhs argument is a list and if its length matches the length of the self.values atrribute
+            new_values: list = []
+            for val in range(len(self.values)):
+                if rhs[val]:
+                    new_values.append(self.values[val])
+            return Simpy(new_values)
