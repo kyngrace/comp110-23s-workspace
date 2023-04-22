@@ -1,8 +1,6 @@
-"""EX10: Simpy"""
-####################################################
-## This file is for people who are having trouble ##
-## getting Jupyter Notebooks to work!             ##
-####################################################
+"""EX10: Simpy."""
+from Simpy import Simpy
+# This file is for people who are having trouble getting Jupyter Notebooks to work!            
 
 """You will implement a utility class that is helpful for 
 working with sequences of numerical data, just like what 
@@ -30,9 +28,7 @@ in a running Python program, the module is evaluated only once."""
 from Simpy import Simpy
 print(f"{Simpy} successfully imported.")
 
-###############################
-## Part 0. Simpy Constructor ##
-###############################
+# Part 0. Simpy Constructor 
 
 """Define a constructor on the `Simpy` class that takes 
 a parameter of type `list[float]`. 
@@ -43,12 +39,10 @@ Once your constructor is properly implemented,
 you expect to see `[1.0, 1.0, 1.0, 1.0, 1.0]` 
 printed when running the code below."""
 
-#ones = Simpy([1., 1., 1., 1., 1.])
-#print(ones.values)
+# ones = Simpy([1., 1., 1., 1., 1.])
+# print(ones.values)
 
-###############################
-## Part 1. `__str__` Method ##
-###############################
+# Part 1. `__str__` Method 
 
 """Define a method in `Simpy` named `__str__` that 
 takes no arguments and returns a `str`. 
@@ -67,11 +61,9 @@ should be in a format of `"Simpy(...)"` where the
 elipses are replaced with the `str` representation 
 of the `values` attribute `list[str]`."""
 
-#print(ones)
+# print(ones)
 
-###########################
-## Part 2. `fill` Method ##
-###########################
+# Part 2. `fill` Method 
 
 """Define a method in `Simpy` named `fill`. 
 Its purpose is to _fill_ a `Simpy`'s `values` 
@@ -104,9 +96,7 @@ by pressing 'cmd + /' on a mac and 'ctrl + /' on windows!"""
 # mixed.fill(2.0, 2)
 # print("Actual: ", mixed, " - Expected: Simpy([2.0, 2.0])")
 
-#############################
-## Part 3. `arange` Method ##
-#############################
+# Part 3. `arange` Method 
 
 """Define a method in `Simpy` named `arange`. 
 Its purpose is to fill in the `values` attribute 
@@ -136,9 +126,7 @@ to be sure you avoid an infinite loop with an invalid argument."""
 # negative.arange(-1.0, -5.0, -1.0)
 # print("Actual: ", negative, " - Expected: Simpy([-1.0, -2.0, -3.0, -4.0])")
 
-##########################
-## Part 4. `sum` Method ##
-##########################
+# Part 4. `sum` Method 
 
 """Define a method in `Simpy` named `sum`. 
 Its purpose is to compute and return the sum 
@@ -157,9 +145,7 @@ It should take no arguments and return a `float`."""
 # one_to_nine.arange(1.0, 10.0)
 # print("Actual: ", one_to_nine.sum(), " - Expected: 45.0")
 
-##########################################
-## Part 5. Operator Overload: `__add__` ##
-##########################################
+# Part 5. Operator Overload: `__add__` 
 
 """Next, you will add the ability to use the _addition operator_ (`+`) 
 in conjunction with `Simpy` objects and floats.
@@ -199,7 +185,7 @@ The signature of the `__add__` function should be:
 def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
 ~~~"""
 
-# # This code tests a Simpy + Simpy
+# This code tests a Simpy + Simpy
 
 # a = Simpy([1.0, 1.0, 1.0])
 # b = Simpy([2.0, 3.0, 4.0])
@@ -208,15 +194,13 @@ def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
 # print("Actual: ", a + a, " - Expected: Simpy([2.0, 2.0, 2.0])")
 # print("Actual: ", b + b, " - Expected: Simpy([4.0, 6.0, 8.0])")
 
-# # This code tests a Simpy + float
+# This code tests a Simpy + float
 # a = Simpy([1.0, 2.0, 3.0])
 # b = a + 10.0
 # print("Actual: ", b, " - Expected: Simpy([11.0, 12.0, 13.0])")
 # print("Actual: ", a + 1.0, " - Expected: Simpy([2.0, 3.0, 4.0])")
 
-##########################################
-## Part 6. Operator Overload: `__pow__` ##
-##########################################
+# Part 6. Operator Overload: `__pow__` 
 
 """Next, you will add the ability to use the _power operator_ (`**`) 
 in conjunction with `Simpy` objects and floats.
@@ -247,7 +231,7 @@ Your implementations of `Simpy#__add__`
 and `Simpy#__pow__` 
 should be _very_ similar!"""
 
-# # This code tests a Simpy ** Simpy
+# This code tests a Simpy ** Simpy
 
 # a = Simpy([2.0, 2.0, 2.0])
 # b = Simpy([1.0, 2.0, 3.0])
@@ -256,16 +240,14 @@ should be _very_ similar!"""
 # print("Actual: ", a ** a, " - Expected: Simpy([4.0, 4.0, 4.0])")
 # print("Actual: ", b ** b, " - Expected: Simpy([1.0, 4.0, 27.0])")
 
-# # This code tests a Simpy ** float
+# This code tests a Simpy ** float
 
 # a = Simpy([1.0, 2.0, 3.0])
 # b = a ** 2.0
 # print("Actual: ", b, " - Expected: Simpy([1.0, 4.0, 9.0])")
 # print("Actual: ", a ** 3.0, " - Expected: Simpy([1.0, 8.0, 27.0])")
 
-################################
-## Check #1 for Understanding ##
-#################################
+# Check #1 for Understanding 
 
 """In the code below, use the capabilities you've added 
 to `Simpy` to ultimately produce a `Simpy` object 
@@ -284,9 +266,7 @@ Your work should _not_ include any loops written in the code below."""
 
 # TODO: Check #1 for Understanding
 
-#################################################
-## Part 7. `__eq__` operator overload for `==` ##
-#################################################
+# Part 7. `__eq__` operator overload for `==` 
 
 """Next, you will add the ability to produce a _mask_, 
 or a `list[bool]`, based on the equality of each item 
@@ -322,7 +302,7 @@ Your expected method signature of `__eq__` is:
 def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
 ~~~"""
 
-# # This code tests a Simpy == Simpy
+# This code tests a Simpy == Simpy
 
 # a = Simpy([1.0, 2.0, 3.0, 4.0])
 # b = Simpy([1.0, 2.0, 1.0, 4.0])
@@ -330,16 +310,14 @@ def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
 # print("Actual: ", c, " - Expected: [True, True, False, True]")
 # print("Actual: ", a == a, " - Expected: [True, True, True, True]")
 
-# # This code tests a Simpy == float
+# This code tests a Simpy == float
 
 # a = Simpy([1.0, 2.0, 1.0, 4.0])
 # b = a == 1.0
 # print("Actual: ", b, " - Expected: [True, False, True, False]")
 # print("Actual: ", a == 2.0, " - Expected: [False, True, False, False]")
 
-################################################
-## Part 8. `__gt__` operator overload for `>` ##
-################################################
+# Part 8. `__gt__` operator overload for `>` 
 
 
 """Next, you will add the ability to produce a _mask_, 
@@ -370,7 +348,7 @@ Your expected method signature of `__gt__` is:
 def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
 ~~~"""
 
-# # This code tests a Simpy > Simpy
+# This code tests a Simpy > Simpy
 
 # a = Simpy([1.0, 2.0, 3.0, 4.0])
 # b = Simpy([2.0, 1.0, 1.0, 5.0])
@@ -378,16 +356,14 @@ def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
 # print("Actual: ", c, " - Expected: [False, True, True, False]")
 # print("Actual: ", b > a, " - Expected: [True, False, False, True]")
 
-# # This code tests a Simpy > float
+# This code tests a Simpy > float
 
 # a = Simpy([1.0, 2.0, 3.0, 4.0])
 # b = a > 2.0
 # print("Actual: ", b, " - Expected: [False, False, True, True]")
 # print("Actual: ", a > 3.0, " - Expected: [False, False, False, True]")
 
-############################################################################
-## Part 9. Subscription Notation with the `__getitem__` operator overload ##
-############################################################################
+# Part 9. Subscription Notation with the `__getitem__` operator overload 
 
 """Next, you will add the ability to use the _subscription_ 
 operator with `Simpy` objects. To add _subscription notation_ 
@@ -422,9 +398,7 @@ def __getitem__(self, rhs: int) -> float:
 # print("Actual: ", a[1], " - Expected: 20.0")
 # print("Actual: ", a[2], " - Expected: 30.0")
 
-##########################################################################
-## Part 10. Overloading the Subscription Notation to Filter with a Mask ##
-##########################################################################
+# Part 10. Overloading the Subscription Notation to Filter with a Mask 
 
 """The acclaimed _NumPy_ library, that `Simpy` is inspired by, 
 allows you to use the subscription operator not just to select
@@ -485,10 +459,7 @@ def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
 # print("Actual: ", b, " - Expected: Simpy([3.0, 4.0])")
 # print("Actual: ", a[a + 1.0 == 2.0], " - Expected: Simpy([1.0, 1.0])")
 
-################################
-## Check #2 for Understanding ##
-################################
-
+# Check #2 for Understanding 
 """Consider two `Simpy` objects that are "columns" 
 of the same table. 
 The `max_temps` object contains the maximum temperature 
@@ -511,4 +482,3 @@ You will also need to use call your `sum` method."""
 # precip = Simpy([0.0, 1.5, 0.1, 0.3, 0.2, 0.8])
 
 # TODO: Your solution goes here.
-
