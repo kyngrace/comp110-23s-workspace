@@ -1,5 +1,5 @@
-"""EX10: Simpy."""
 from Simpy import Simpy
+"""EX10: Simpy."""
 # This file is for people who are having trouble getting Jupyter Notebooks to work!            
 
 """You will implement a utility class that is helpful for 

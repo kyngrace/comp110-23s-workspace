@@ -15,7 +15,7 @@ class Simpy:
     # TODO: Your constructor and methods will go here.
 
     def __init__(self, input_values: list[float]):
-        """Sets the values attribute equal to the input_values argument."""
+        """Set the values attribute equal to the input_values argument."""
         self.values = input_values
         # sets the self.values attribute equal to the input_values argument
 
