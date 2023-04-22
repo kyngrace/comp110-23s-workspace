@@ -1,6 +1,7 @@
-from Simpy import Simpy
 """EX10: Simpy."""
-# This file is for people who are having trouble getting Jupyter Notebooks to work!            
+# This file is for people who are having trouble getting Jupyter Notebooks to work!
+
+from Simpy import Simpy            
 
 """You will implement a utility class that is helpful for 
 working with sequences of numerical data, just like what 
