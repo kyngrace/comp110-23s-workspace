@@ -25,8 +25,7 @@ in the `Simpy.py` file found in the `exercises/ex10`
 directory. As you now know, when you import modules 
 in a running Python program, the module is evaluated only once."""
 
-# Import the class being implemented
-from Simpy import Simpy
+# Import the class being implemented 
 print(f"{Simpy} successfully imported.")
 
 # Part 0. Simpy Constructor 
