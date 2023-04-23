@@ -77,7 +77,7 @@ class Simpy:
         elif type(rhs) == Simpy:
             # checks if the type of the rhs argument is Simpy
             assert len(self.values) == len(rhs.values)
-            return Simpy([self.values[idx] == rhs.values[idx] for idx in range(len(self.values))])
+            return [self.values[idx] == rhs.values[idx] for idx in range(len(self.values))]
         
     def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
         """Add the ability to produce a mask based on the greater than relationship between each item in the values attribute with some other Simpy object or a float value."""
@@ -87,7 +87,7 @@ class Simpy:
         elif type(rhs) == Simpy:
             # checks if the type of the rhs argument is Simpy
             assert len(self.values) == len(rhs.values)
-            return Simpy([self.values[idx] > rhs.values[idx] for idx in range(len(self.values))])
+            return [self.values[idx] > rhs.values[idx] for idx in range(len(self.values))]
         
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
         """Take either an int in the first usage or a list[bool] in the second usage and return either a single float value or a new Simpy object."""
